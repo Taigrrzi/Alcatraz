@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enemyBrain.cs">
     <Files>
+      <File FileName="Assets\Scripts\enemyBrain.cs" Line="46" Column="109" />
       <File FileName="Assets\Scripts\lightBrain.cs" Line="17" Column="93" />
       <File FileName="Assets\Scripts\playerMovement.cs" Line="39" Column="5" />
-      <File FileName="Assets\Scripts\enemyBrain.cs" Line="34" Column="3" />
-      <File FileName="..\WarNauts\Assets\Scripts\UnitBrain.cs" Line="125" Column="3" />
+      <File FileName="..\WarNauts\Assets\Scripts\UnitBrain.cs" Line="22" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
