@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour {
 
 	public string input ;
 	public float speed ;
+	public int partsExposed ;
 	//public Vector2 mouseScreenPosition ;
 	//public Vector2 mouseWorldPosition ;
 
@@ -35,6 +36,7 @@ public class playerMovement : MonoBehaviour {
 		float angle = -Mathf.Atan2(h,v) * Mathf.Rad2Deg;
 		
 		transform.rotation = Quaternion.Euler (0, 0, angle);
-
+		//Debug.Log (partsExposed);
+		partsExposed = 0;
 	}
 }

@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{7D187D28-19BD-6AFE-8C43-343BB94E9990}</ProjectGuid>
+	<ProjectGuid>{C4277C3C-6E64-8F17-1486-157D28D8688D}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
+     <Compile Include="Assets\Scripts\enemyBrain.cs" />
      <Compile Include="Assets\Scripts\lightBrain.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />
  <Reference Include="UnityEngine.UI">
