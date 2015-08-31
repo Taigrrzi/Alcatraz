@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\enemyBrain.cs" />
      <Compile Include="Assets\Scripts\lightBrain.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />
+     <Compile Include="Assets\Scripts\wallCreation.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Coding Stuff/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

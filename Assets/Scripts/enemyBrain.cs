@@ -7,10 +7,13 @@ public class enemyBrain : MonoBehaviour {
 	public int currentNode ;
 	public float speed ;
 	public GameObject patrolRoute ;
+	public int pathDirection ;
 	// Use this for initialization
 	void Start () {
 		currentNode = 0;
 		aiState = 1;
+		patrolNodeAmount = patrolRoute.transform.childCount;
+		pathDirection = 1;
 	}
 	
 	// Update is called once per frame
@@ -34,10 +37,19 @@ public class enemyBrain : MonoBehaviour {
 		//transform.LookAt (transform.GetChild (currentNode).transform.position,Vector3.right);
 		//Debug.Log ("Patrolling!");
 		if (Vector3.Distance (transform.position, patrolRoute.transform.GetChild (currentNode).transform.position) < 0.5f) {
-			if (currentNode < patrolNodeAmount-1) {
-				currentNode += 1;
-			} else {
-				currentNode = 0;
+			if (patrolRoute.tag == "CircularPath") {
+				if (currentNode < patrolNodeAmount-1) {
+					currentNode += 1;
+				} else {
+					currentNode = 0;
+				}
+			} else if (patrolRoute.tag == "InvertPath")   {
+				if (currentNode < patrolNodeAmount-1&&currentNode>-1) {
+					currentNode += pathDirection;
+				} else {
+					pathDirection = -pathDirection;
+					currentNode += pathDirection;
+				}
 			}
 		}
 		Vector3 dir = patrolRoute.transform.GetChild (currentNode).transform.position - transform.position;
