@@ -10,7 +10,6 @@ public class enemyBrain : MonoBehaviour {
 	public int pathDirection ;
 	// Use this for initialization
 	void Start () {
-		currentNode = 0;
 		aiState = 1;
 		patrolNodeAmount = patrolRoute.transform.childCount;
 		pathDirection = 1;
@@ -44,7 +43,7 @@ public class enemyBrain : MonoBehaviour {
 					currentNode = 0;
 				}
 			} else if (patrolRoute.tag == "InvertPath")   {
-				if (currentNode < patrolNodeAmount-1&&currentNode>-1) {
+				if (currentNode < patrolNodeAmount-1&&currentNode>0) {
 					currentNode += pathDirection;
 				} else {
 					pathDirection = -pathDirection;
@@ -52,15 +51,12 @@ public class enemyBrain : MonoBehaviour {
 				}
 			}
 		}
+		//Debug.Log (currentNode);
 		Vector3 dir = patrolRoute.transform.GetChild (currentNode).transform.position - transform.position;
 		float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg)-90f;
-		Vector3 intendedRotation = Quaternion.AngleAxis(angle, Vector3.forward).eulerAngles ;
-		transform.rotation = Quaternion.Euler(Vector3.Lerp (transform.rotation.eulerAngles,intendedRotation,0.2f));
+		Quaternion intendedRotation = Quaternion.AngleAxis(angle, Vector3.forward) ;
+		//transform.rotation = Quaternion.Euler(Vector3.Lerp (transform.rotation.eulerAngles,intendedRotation,0.05f));
+		transform.rotation = Quaternion.Lerp (transform.rotation,intendedRotation, 0.05f);
 		transform.position = Vector3.MoveTowards (transform.position, patrolRoute.transform.GetChild (currentNode).transform.position, speed);
-		/*transform.Translate (new Vector3 
-		(transform.position.x + (speed * Time.deltaTime * Mathf.Sin (transform.rotation.eulerAngles.z * Mathf.Deg2Rad)), 
-		 transform.position.y + (speed * Time.deltaTime * Mathf.Cos (transform.rotation.eulerAngles.z * Mathf.Deg2Rad)), transform.position.z));
-		*/
-		//this.transform.position += this.transform.forward * speed;
 	}
 }
